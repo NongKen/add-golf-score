@@ -19,6 +19,10 @@ app.prepare()
       return handle(req, res)
     })
 
+    server.get('/', basicAuth({ users: { 'kawee': 'cheew8' }, challenge: true }), (req, res) => {
+      return handle(req, res)
+    })
+
     server.listen(port, (err) => {
       if (err) throw err
       console.log(`> Ready on http://localhost:${port}`)

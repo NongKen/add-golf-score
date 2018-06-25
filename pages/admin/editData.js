@@ -22,37 +22,8 @@ class Admin extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      textData: '',
-      formData: '',
-      title: '',
-      subTitle: '',
-      defaultDay: '1'
+      formData: ''
     }
-  }
-
-  onUpdateText() {
-    const textData = this.state.textData
-    rootRef.child('/textDb/').set(textData)
-  }
-
-  onUpdateTitle() {
-    const title = this.state.title
-    rootRef.child('/title/').set(title)
-  }
-
-  onUpdateSubTitle() {
-    const subTitle = this.state.subTitle
-    rootRef.child('/subTitle/').set(subTitle)
-  }
-
-  onUpdateDefaultDay() {
-    const defaultDay = this.state.defaultDay
-    rootRef.child('/defaultDay/').set(defaultDay)
-  }
-
-  onUpdateDefaultDay() {
-    const defaultDay = this.state.defaultDay
-    rootRef.child('/defaultDay/').set(defaultDay)
   }
 
   onUpdateformData() {
@@ -72,27 +43,8 @@ class Admin extends React.Component {
   render() {
     return (
       <div>
-        <input style={{ width: '500px'}} onChange={(e) => this.setState({ title: e.target.value})} value={this.state.title}></input>
-        <button onClick={() => this.onUpdateTitle()}>Set Title</button>
-        <br/>
-        <br/>
-        <input style={{ width: '500px'}} onChange={(e) => this.setState({ subTitle: e.target.value})} value={this.state.subTitle}></input>
-        <button onClick={() => this.onUpdateSubTitle()}>Set SubTitle</button>
-        <br/>
-        <br/>
-        <input style={{ width: '500px'}} onChange={(e) => this.setState({ defaultDay: e.target.value})} value={this.state.defaultDay}></input>
-        <button onClick={() => this.onUpdateDefaultDay  ()}>Set default day</button>
-        <br/>
-        <br/>
-        <textarea onChange={(e) => this.setState({ textData: e.target.value})}></textarea>
-        <button onClick={() => this.onUpdateText()}>Update Score</button>
-        <br/>
-        <br/>
         <textarea onChange={(e) => this.setState({ formData: e.target.value})}></textarea>
         <button onClick={() => this.onUpdateformData()}>Update Form Data</button>
-        
-        
-
       </div>
     )
   }
