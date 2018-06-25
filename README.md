@@ -1,1 +1,1 @@
-# add-golf-score
+# golf-score
