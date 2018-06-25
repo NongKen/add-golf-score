@@ -2,8 +2,6 @@ const express = require('express')
 const basicAuth = require('express-basic-auth')
 const next = require('next')
 
-const config = require("./config")
-
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -13,15 +11,14 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    server.all('/admin*', basicAuth({ users: { 'kawee': 'cheew8' }, challenge: true }))
+    server.get('/', basicAuth({ users: { 'kawee': 'cheew8' }, challenge: true }), (req, res) => {
+      return handle(req, res)
+    })
 
     server.get('*', (req, res) => {
       return handle(req, res)
     })
 
-    server.get('/', basicAuth({ users: { 'kawee': 'cheew8' }, challenge: true }), (req, res) => {
-      return handle(req, res)
-    })
 
     server.listen(port, (err) => {
       if (err) throw err
