@@ -106,7 +106,7 @@ const checkDiffUserCourt = (userRaw, courtRaw) => {
   }
 }
 
-const tableConfig = ['25px', '25px', '200px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '75px']
+const tableConfig = ['25px', '25px', '144px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '75px']
   
 
 class Home extends React.Component {  
@@ -160,7 +160,7 @@ class Home extends React.Component {
                         <TableRow bgColor={+rowData[0] % 2 === 0 ? '#ffffff' : '#dadada'}>
                           <TableItem width={tableConfig[0]}>{rowData[0]}</TableItem>
                           <TableItem width={tableConfig[1]}>{rowData[1]}</TableItem>
-                          <TableItem width={tableConfig[2]}>{rowData[2]}</TableItem>
+                          <TableItem width={tableConfig[2]} style={{ 'font-size': '10px', 'text-align': 'left' }}>{rowData[2]}</TableItem>
                           {
                             rowData[3].map((hole, holeIndex) => {
                               if ([13,14,15].includes(holeIndex + 1)) {

@@ -106,7 +106,7 @@ const checkDiffUserCourt = (userRaw, courtRaw) => {
   }
 }
 
-const tableConfig = ['25px', '25px', '200px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '25px', '75px']
+const tableConfig = ['25px', '25px', '200px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '75px']
   
 
 class Home extends React.Component {  
