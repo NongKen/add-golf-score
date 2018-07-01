@@ -86,7 +86,8 @@ const HoleInput = styled.input`
   width: 100%;
   background: transparent;
   border: none;
-  :focus {
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
     font-size: 16px;
   }
 `
@@ -147,7 +148,7 @@ class Home extends React.Component {
             <TableWrapper>
               <Table>
                 <TableHead>
-                  <TableRow>
+                  <TableRow bgColor="#99caa7">
                     <TableItem width={tableConfig[0]}>กลุ่ม</TableItem>
                     <TableItem width={tableConfig[1]}>บอล</TableItem>
                     <TableItem width={tableConfig[2]}>ชื่อผู้เล่น</TableItem>
