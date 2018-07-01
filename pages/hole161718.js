@@ -86,6 +86,9 @@ const HoleInput = styled.input`
   width: 100%;
   background: transparent;
   border: none;
+  :focus {
+    font-size: 16px;
+  }
 `
 
 const getSumShot = (data) => {
@@ -106,7 +109,7 @@ const checkDiffUserCourt = (userRaw, courtRaw) => {
   }
 }
 
-const tableConfig = ['25px', '25px', '144px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '75px']
+const tableConfig = ['25px', '25px', '94px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '24px', '75px']
   
 
 class Home extends React.Component {  
@@ -144,10 +147,10 @@ class Home extends React.Component {
             <TableWrapper>
               <Table>
                 <TableHead>
-                  <TableRow>
-                    <TableItem width={tableConfig[0]}>Group</TableItem>
-                    <TableItem width={tableConfig[1]}>Ball</TableItem>
-                    <TableItem width={tableConfig[2]}>Name</TableItem>
+                  <TableRow bgColor="#99caa7">
+                    <TableItem width={tableConfig[0]}>กลุ่ม</TableItem>
+                    <TableItem width={tableConfig[1]}>บอล</TableItem>
+                    <TableItem width={tableConfig[2]}>ชื่อผู้เล่น</TableItem>
                     <TableItem width={tableConfig[3]}>16</TableItem>
                     <TableItem width={tableConfig[4]}>17</TableItem>
                     <TableItem width={tableConfig[5]}>18</TableItem>
