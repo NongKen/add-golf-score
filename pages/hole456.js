@@ -86,7 +86,7 @@ const HoleInput = styled.input`
   width: 100%;
   background: transparent;
   border: none;
-  :focus {
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
     font-size: 16px;
   }
 `
