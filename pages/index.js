@@ -61,17 +61,17 @@ const TableBody = styled.div`
   height: 91vh;
   width: fit-content;
   margin: auto;
-  ::-webkit-scrollbar { 
-    display: none; 
+  ::-webkit-scrollbar {
+    display: none;
   }
 `
 
 const TableRow = styled.div`
   display: flex;
-  background: ${props => props.bgColor || 'transparent'};  
+  background: ${props => props.bgColor || 'transparent'};
 `
 
-const TableItem = styled.div` 
+const TableItem = styled.div`
   padding: 6px 8px;
   border: 1px solid black;
   overflow: hidden;
@@ -86,7 +86,7 @@ const HoleInput = styled.input`
   width: 100%;
   background: transparent;
   border: none;
-  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
     font-size: 16px;
   }
 `
@@ -110,9 +110,9 @@ const checkDiffUserCourt = (userRaw, courtRaw) => {
 }
 
 const tableConfig = ['25px', '25px', '200px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '30px', '75px']
-  
 
-class Home extends React.Component {  
+
+class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -146,11 +146,11 @@ class Home extends React.Component {
     if (!this.state.formData) {
       return (null)
     }
-   
+
     return (
       <FullBackground color="#cecece">
         <Context>
-          <Container> 
+          <Container>
             <TableWrapper>
               <Table>
                 <TableHead>
@@ -193,14 +193,24 @@ class Home extends React.Component {
                             <HoleInput type="text" value={rowData[2]} onChange={(e) => this.onChangeUser(rowIndex, 2, e.target.value)}/>
                           </TableItem>
                           {
-                            rowData[3].map((hole, holeIndex) => (
-                              <TableItem
-                                width={tableConfig[3+holeIndex]}
-                                style={{ cursor: 'pointer', borderLeft: `1px solid ${holeIndex === 9 ? 'white' : 'black '}`, borderRight: `1px solid ${holeIndex === 8 ? 'white' : 'black '}`}}
-                              >
-                                <HoleInput type="number" value={hole === 'empty' ? null : hole} onChange={(e) => this.onChangeHoleData(rowIndex , holeIndex, e.target.value)}/>
-                              </TableItem>
-                            ))
+                            rowData[3].map((hole, holeIndex) => {
+                              let borderRightColor = 'black'
+                              let borderleftColor = 'black'
+                              if ((holeIndex + 1) % 3 !== 0) {
+                                borderRightColor = '#acacac'
+                              }
+                              if ((holeIndex) % 3 !== 0) {
+                                borderleftColor = '#acacac'
+                              }
+                              return (
+                                <TableItem
+                                  width={tableConfig[3+holeIndex]}
+                                  style={{ borderLeft: `1px solid ${borderleftColor}`, borderRight: `1px solid ${borderRightColor}`}}
+                                >
+                                  {hole === 'empty' ? null : hole}
+                                </TableItem>
+                              )
+                            })
                           }
                         </TableRow>
                       )
