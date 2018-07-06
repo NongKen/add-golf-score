@@ -131,8 +131,9 @@ class Home extends React.Component {
   onChangeHoleData(rowIndex, holeIndex, value) {
     let formData = this.state.formData
     formData[rowIndex][3][holeIndex] = value
-
+    
     rootRef.child('/formData/').set(formData)
+    this.setState({ formData })
   }
 
   render() {
